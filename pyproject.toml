@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codec-probing"
+version = "0.1.0"
+description = "What do the RVQ levels of a pretrained neural audio codec (Kyutai Mimi) encode?"
+requires-python = ">=3.11"
+# Pinned to the versions this project was developed and tested with.
+# torch: install the CPU wheel first, see README.
+dependencies = [
+    "torch==2.11.0",
+    "transformers==5.5.4",
+    "librosa==1.0.0",
+    "soundfile==0.14.0",
+    "pystoi==0.4.1",
+    "speechbrain==1.1.1",
+    "scikit-learn==1.9.1",
+    "matplotlib==3.11.2",
+    "pyyaml==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["model: loads pretrained weights (downloaded on first run)"]
+filterwarnings = ["ignore::UserWarning", "ignore::FutureWarning"]

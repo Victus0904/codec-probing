@@ -1,0 +1,27 @@
+# Phase 1: reconstruction sweep over the number of Mimi codebooks.
+# Relative paths are resolved against the repository root.
+
+seed: 0
+device: cpu            # "cpu" or "cuda"
+
+codec:
+  model_id: kyutai/mimi
+  sample_rate: 24000   # Mimi's native rate; all audio is resampled to this
+
+speaker_model:
+  source: speechbrain/spkrec-ecapa-voxceleb
+  sample_rate: 16000   # ECAPA was trained on 16 kHz VoxCeleb
+  savedir: outputs/pretrained/ecapa
+
+data:
+  # Files and/or directories (searched recursively for audio files).
+  inputs:
+    - data/examples
+  max_duration_s: 20.0  # crop longer files; null = no limit
+
+sweep:
+  num_codebooks: [1, 2, 4, 8, 16, 32]
+
+output:
+  dir: outputs/phase1
+  cache_dir: outputs/cache/mimi_codes

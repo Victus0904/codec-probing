@@ -39,3 +39,7 @@ __pycache__/
 outputs/
 data/
 pretrained_models/
+
+### IDE ###
+.idea/
+*.iml

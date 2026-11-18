@@ -1,5 +1,11 @@
 # codec-probing
 
+[![CI](https://github.com/Victus0904/codec-probing/actions/workflows/ci.yml/badge.svg)](https://github.com/Victus0904/codec-probing/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.12%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20only-EE4C2C)
+![Model](https://img.shields.io/badge/codec-Kyutai%20Mimi-black)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 What do the tokens of a pretrained neural audio codec encode? This project takes
 Kyutai's **Mimi** codec (`kyutai/mimi`, 24 kHz, 12.5 frames/s, 32 residual
 codebooks of 2048 entries) and measures how information is spread across its
@@ -14,7 +20,7 @@ pretrained models plus small linear probes. Everything runs on a CPU-only laptop
 
 ## Setup
 
-Python 3.11+ (developed on 3.13, Windows 11, CPU only).
+Python 3.12+ (developed on 3.13, Windows 11, CPU only).
 
 ```bash
 python -m venv .venv
@@ -156,3 +162,7 @@ tests/                       pytest, 2 s synthetic audio
 - Use `torch.no_grad()`, not `torch.inference_mode()`. The codebooks lazily cache
   their embedding tables on first use, and a table cached under inference mode makes
   every later grad-mode call fail.
+
+## License
+
+[MIT](LICENSE)

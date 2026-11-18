@@ -1,7 +1,7 @@
 # codec-probing
 
 [![CI](https://github.com/Victus0904/codec-probing/actions/workflows/ci.yml/badge.svg)](https://github.com/Victus0904/codec-probing/actions/workflows/ci.yml)
-![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+![Python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20only-EE4C2C)
 ![Model](https://img.shields.io/badge/codec-Kyutai%20Mimi-black)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -20,7 +20,7 @@ pretrained models plus small linear probes. Everything runs on a CPU-only laptop
 
 ## Setup
 
-Python 3.11+ (developed on 3.13, Windows 11, CPU only).
+Python 3.12+ (developed on 3.13, Windows 11, CPU only).
 
 ```bash
 python -m venv .venv

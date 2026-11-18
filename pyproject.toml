@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "codec-probing"
 version = "0.1.0"
 description = "What do the RVQ levels of a pretrained neural audio codec (Kyutai Mimi) encode?"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 # Pinned to the versions this project was developed and tested with.
 # torch: install the CPU wheel first, see README.
 dependencies = [
